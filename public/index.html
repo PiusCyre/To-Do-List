@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-mono m-0">
+    <main>
+      <div
+        id="todo-container"
+        class="max-w-sm mx-auto my-0 bg-blue-100 p-9 rounded-lg shadow-blue-300 shadow-md"
+      >
+        <h1 class="text-center text-orange-400 text-2xl">To-Do List</h1>
+        <div
+          id="input-container"
+          class="flex justify-between rounded-2xl bg-white"
+        >
+          <input
+            class="border-0 p-4 rounded-2xl focus:outline-0 w-full"
+            type="text"
+            name="text"
+            id="todo-input"
+            placeholder="Add a new text.."
+          />
+          <button
+            id="add-task-btn"
+            class="py-0 text-white px-4 bg-orange-400 rounded-2xl w-24 shadow-sm shadow-orange-400"
+          >
+            Add Task
+          </button>
+        </div>
+        <ul id="todo-list" class="p-0"></ul>
+        <p
+          id="no-item"
+          class="block text-center uppercase font-light text-orange-300 mt-4"
+        >
+          No Task Added
+        </p>
+        <footer class="text-center text-orange-500 font-sans mt-16">
+          &COPY; With ❤ And ⚡ from Cyre
+        </footer>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
