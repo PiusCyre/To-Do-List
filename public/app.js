@@ -28,7 +28,8 @@ function createTaskItem(taskText) {
     "justify-between",
     "gap-3",
     "m-4",
-    "p-4",
+    "px-4",
+    "py-2",
     "items-center",
     "bg-white",
     "rounded-lg",
@@ -37,7 +38,7 @@ function createTaskItem(taskText) {
 
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
-  checkBox.classList.toggle("hover:cursor-pointer", "caret-orange-400");
+  // checkBox.classList.toggle("hover:cursor-pointer", "caret-orange-400");
 
   const taskTextSpan = document.createElement("span");
   taskTextSpan.textContent = taskText;
@@ -51,8 +52,11 @@ function createTaskItem(taskText) {
     "font-bold",
     "uppercase",
     "py-2",
-    "hover:shadow-lg",
-    "hover:shadow-orange-300",
+    "hover:shadow-md",
+    "hover:bg-orange-500",
+    "transition-all",
+    "duration-800",
+    "hover:shadow-orange-100",
     "text-white"
   );
   deleteBtn.addEventListener("click", deleteTask);
@@ -65,8 +69,8 @@ function createTaskItem(taskText) {
   if (taskItem) {
     noItem.style.display = "none";
   } else {
-    // noItem.style.display = "block";
-    noItem.textContent = "All Previous Tasks Completed";
+    noItem.style.display = "block";
+    // noItem.textContent = "All Previous Tasks Completed";
   }
 
   return taskItem;
@@ -76,15 +80,23 @@ const deleteTask = (e) => {
   const taskItem = e.target.parentNode;
   todoList.removeChild(taskItem);
 
-  if (taskItem == 0) {
+  if (todoList.childElementCount === 0) {
     noItem.style.display = "block";
-    noItem.textContent = "Previous Tasks Completed..";
+    noItem.textContent = "All Previous Tasks Completed...";
   }
 };
 //cross out items
 const toggleTask = (e) => {
   const taskItem = e.target.parentNode;
-  taskItem.classList.add("line-through", "opacity-70", "decoration-orange-400");
+  taskItem.classList.toggle(
+    "line-through",
+    "opacity-70",
+    "decoration-orange-400",
+    "bg-orange-400",
+    "transition-colors",
+    "duration-1000",
+    "ease-in-out"
+  );
 };
 //event listeners
 addTaskBtn.addEventListener("click", addTask);
@@ -96,5 +108,14 @@ todoInput.addEventListener("keydown", function (e) {
 });
 
 todoList.addEventListener("change", toggleTask);
+
+const timeNdAffection = document.getElementById("time");
+
+const showDate = () => {
+  const date = new Date();
+  timeNdAffection.textContent = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
+};
+
+setInterval(showDate, 1000);
 
 //exempli gratia of tasks

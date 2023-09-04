@@ -6,13 +6,21 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="font-mono m-0">
+  <body class="font-mono">
     <main>
       <div
         id="todo-container"
-        class="max-w-sm mx-auto my-0 bg-blue-100 p-9 rounded-lg shadow-blue-300 shadow-md"
+        class="max-w-sm mx-auto mt-6 bg-blue-100 p-9 rounded-lg shadow-blue-300 shadow-sm sm:max-w-lg sm:w-full"
       >
-        <h1 class="text-center text-orange-400 text-2xl">To-Do List</h1>
+        <h1
+          class="text-center text-orange-400 uppercase text-3xl mb-8 font-sans"
+        >
+          To-Do List
+        </h1>
+        <p
+          id="time"
+          class="text-gray-200 block text-center mb-8 text-xl font-serif bg-orange-400 rounded-3xl p-2 w-1/2 mx-auto hover:text-orange-300 cursor-pointer transition-all duration-700 ease-in-out hover:bg-blue-100 hover:shadow-sm hover:shadow-blue-300"
+        ></p>
         <div
           id="input-container"
           class="flex justify-between rounded-2xl bg-white"
@@ -26,7 +34,7 @@
           />
           <button
             id="add-task-btn"
-            class="py-0 text-white px-4 bg-orange-400 rounded-2xl w-24 shadow-sm shadow-orange-400"
+            class="py-0 text-white px-4 bg-orange-400 rounded-2xl w-26 font-medium active:rounded-full transition-all duration-500 hover:rounded-s-full active:shadow-md active:shadow-blue-200 active:bg-white active:text-orange-600 shadow-sm shadow-orange-400 sm:w-36 sm:px-2"
           >
             Add Task
           </button>
@@ -34,12 +42,12 @@
         <ul id="todo-list" class="p-0"></ul>
         <p
           id="no-item"
-          class="block text-center uppercase font-light text-orange-300 mt-4"
+          class="block text-center uppercase font-semibold text-orange-300 mt-16"
         >
           No Task Added
         </p>
-        <footer class="text-center text-orange-500 font-sans mt-16">
-          &COPY; With ❤ And ⚡ from Cyre
+        <footer class="text-center text-orange-500 font-sans mt-4 italic">
+          &COPY; With ❤ And ⚡ from Cyre, 2023
         </footer>
       </div>
     </main>
